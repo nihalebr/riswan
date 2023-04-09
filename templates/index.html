@@ -8,7 +8,7 @@
 {% block fullscreen %}
 
 <div class="index-banner">
-  <div class="index-banner-bg"><img src="https://github.com/JessicaPotter2/foodWebsite/blob/master/images/banner.jpg?raw=true" alt="banner" /></div>
+  <div class="index-banner-bg"><img src="https://images.unsplash.com/photo-1560801619-01d71da0f70c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="banner" /></div>
   <div class="index-banner-text">
       <h1 align="center" class="head_mansi">MOODIE FOODIE</h1>
     <div class="text-logo"></div>
@@ -53,7 +53,12 @@ font-family: 'Poor Story', cursive;
   overflow: hidden;
 }
 .index-banner-bg img {
-  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 16/9;
+  height: 100%;
+  width: 100%;
+  filter: brightness(50%);
 }
 .index-banner-text {
   position: absolute;
