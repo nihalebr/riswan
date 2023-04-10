@@ -14,22 +14,24 @@ $Folder = "./venv"
 $version = "3.11.0" # Replace this with the version you want to check
 $Script:Activate = "$Folder/Scripts/activate.ps1"
 $Script:Deactivate = "$Folder/Scripts/deactivate.bat"
-$python = Get-Command python -ErrorAction SilentlyContinue
+$python = Get-Command python3.exe -ErrorAction SilentlyContinue
 
 write-host "Django Server Starting Script"
 write-host "-----------------------------"
 write-host "Checking for Python $version or above 🐍"
 if ($python) {
-    $output = $python.Version.ToString()
+    $output = $(python3 -V)
     if ($output -ge $version) {
         Write-Host "Python version $version or above is already installed.😎"
     }
     else {
         Write-Host "Python version $version or above is not installed. Please upgrade your Python version.😔"
+        exit
     }
 }
 else {
-    Write-Host "Python is not installed on this system."
+    Write-Host "Python is not install not found. Please install Python $version using Windows Store .😔"
+    exit
 }
 
 try {
